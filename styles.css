@@ -1,0 +1,41 @@
+
+html, body {
+	overflow: hidden;
+}
+
+@media screen {
+#canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 250pt;
+	bottom: 0;
+	overflow: scroll;
+	padding: 10pt;
+}
+
+#page {
+	background: white;
+	width: 595.4pt;
+	height: 842pt;
+	padding: 90pt 50pt 100pt 50pt;
+	margin: auto;
+	border: 1px solid lightgray;
+	box-shadow: 2pt 2pt 5pt 3pt lightgray;
+}
+}
+
+#panel {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 250pt;
+	overflow: hidden;
+}
+
+@media print {
+	#panel {
+		display: none;
+	}
+}
