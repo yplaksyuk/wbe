@@ -39,3 +39,13 @@ html, body {
 		display: none;
 	}
 }
+
+.ui-slider {
+	margin-top: 6pt;
+	margin-bottom: 6pt;
+}
+
+label {
+	display: block;
+	margin-top: 4pt;
+}
