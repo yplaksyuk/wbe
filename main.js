@@ -42,16 +42,16 @@ $(function() {
 	$('#panel').tabs();
 
 	const scale = $('#scale').slider({ min: 0.3, max: 1.0, step: 0.1 })
-		.on('slidechange slide', function() {
-			const val = scale.slider('value');
+		.on('slidechange slide', function(event, ui) {
+			const val = ui.value || scale.slider('value');
 
 			dest.attr('transform', `scale(${val} ${val})`);
 			$('#bge').attr('patternTransform', `scale(${val} ${val})`);
 		});
 
 	const thinkness = $('#thinkness').slider({ min: 0.1, max: 0.7, step: 0.1 })
-		.on('slidechange slide', function() {
-			const val = thinkness.slider('value');
+		.on('slidechange slide', function(event, ui) {
+			const val = ui.value || thinkness.slider('value');
 
 			dest.attr('stroke-width', val);
 		});
