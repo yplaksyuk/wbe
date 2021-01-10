@@ -14,30 +14,36 @@ $(function() {
 	const update = function() {
 		const source = $('#source').val();
 
+		const symbols = { '+': 'plus', '-': 'minus', '=': 'equal' };
+
+		const appendSymbol = function(href, x, y) {
+			const elem = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+			elem.setAttributeNS(null, 'href', href);
+			elem.setAttributeNS(null, 'width', '60');
+			elem.setAttributeNS(null, 'height', '60');
+			elem.setAttributeNS(null, 'x', x * 60);
+			elem.setAttributeNS(null, 'y', y * 60);
+
+			if (x == 0) {
+				elem.setAttributeNS(null, 'stroke', 'red');
+				elem.setAttributeNS(null, 'stroke-width', '.5');
+				elem.setAttributeNS(null, 'stroke-dasharray', 'none');
+			}
+
+			dest.append(elem);
+		};
+
+
 		dest.empty();
 
-		$.each(source.replace(/[^0-9 \n]/, '').split('\n'), function(index, text) {
-			const y = index * 60;
-
-			for (let pos = 0; pos < text.length; ++pos) {
-				const ch = text.charAt(pos);
+		$.each(source.split('\n'), function(y, text) {
+			for (let x = 0; x < text.length; ++x) {
+				const ch = text.charAt(x);
 				
-				if (/\d/.test(ch)) {
-					const elem = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-					elem.setAttributeNS(null, 'href', 'digit.svg#d' + ch);
-					elem.setAttributeNS(null, 'width', '60');
-					elem.setAttributeNS(null, 'height', '60');
-					elem.setAttributeNS(null, 'x', pos * 60);
-					elem.setAttributeNS(null, 'y', y);
-
-					if (pos == 0) {
-						elem.setAttributeNS(null, 'stroke', 'red');
-						elem.setAttributeNS(null, 'stroke-width', '.5');
-						elem.setAttributeNS(null, 'stroke-dasharray', 'none');
-					}
-
-					dest.append(elem);
-				}
+				if (/\d/.test(ch))
+					appendSymbol('digit.svg#d' + ch, x, y);
+				else if (symbols[ch])
+					appendSymbol('symbol.svg#' + symbols[ch], x, y);
 			}
 		});
 

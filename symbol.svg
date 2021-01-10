@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+	<symbol id="plus" width="60" height="60" viewBox="0 -12 12 12">
+		<path d="M 6 -9 L 6 -3 M 3 -6 L 9 -6" />
+	</symbol>
+
+	<symbol id="minus" width="60" height="60" viewBox="0 -12 12 12">
+		<path d="M 3 -6 L 9 -6" />
+	</symbol>
+
+	<symbol id="equal" width="60" height="60" viewBox="0 -12 12 12">
+		<path d="M 3 -8 L 9 -8 M 3 -4 L 9 -4" />
+	</symbol>
+</svg>
