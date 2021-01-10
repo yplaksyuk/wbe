@@ -17,6 +17,14 @@
 	<div id="page">
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495.4 652" width="100%" height="100%">
 		<defs>
+			<linearGradient id="fadeGrad" x1="0%" x2="100%" y1="0%" y2="0%">
+				<stop offset="0%" stop-opacity="0" />
+				<stop offset="100%" stop-opacity="0" />
+			</linearGradient>
+			<mask id="fade" maskContentUnits="objectBoundingBox">
+				<rect width="1" height="1" fill="url(#fadeGrad)" />
+			</mask>
+
 			<pattern id="bge" viewBox="0 0 60 60" width="60" height="60" patternUnits="userSpaceOnUse" patternTransform="scale(0.5 0.5)">
 				<polyline points="60,0 0,0 0,60" stroke="blue" fill="none" />
 			</pattern>
@@ -40,6 +48,12 @@
 
 			<label for="thinkness">Толщина линии</label>
 			<div id="thinkness" class="inject"></div>
+
+			<label for="color">Насыщенность</label>
+			<div id="color" class="inject"></div>
+
+			<label for="style">Стиль</label>
+			<div><input type="checkbox" class="inject" id="style" /> пунктир</div>
 
 			<label for="source">Шаблон</label>
 			<textarea id="source" class="inject" cols="30" rows="30" style="font-family: monospace;"></textarea>
