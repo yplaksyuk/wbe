@@ -1,30 +1,31 @@
-$(function() {
-	const storage = window.localStorage;
+import * as symbols from './symbols.js';
 
-	const init = {
+$(function() {
+	const config = {
 		scale: 0.5,
 		thinkness: 0.2,
 		color: 1,
-		style: false,
+		sample: true,
+		monospaced: true,
 		source: '111\n222\n333'
 	}
 
 	const dest = $('#dest');
 
+	const font = Object.assign({ }, symbols.digits, symbols.special);
+
 	const update = function() {
 		const source = $('#source').val();
-
-		const symbols = { '+': 'plus', '-': 'minus', '=': 'equal' };
 
 		const appendSymbol = function(href, x, y) {
 			const elem = document.createElementNS('http://www.w3.org/2000/svg', 'use');
 			elem.setAttributeNS(null, 'href', href);
-			elem.setAttributeNS(null, 'width', '60');
-			elem.setAttributeNS(null, 'height', '60');
-			elem.setAttributeNS(null, 'x', x * 60);
-			elem.setAttributeNS(null, 'y', y * 60);
+			elem.setAttributeNS(null, 'width', '12');
+			elem.setAttributeNS(null, 'height', '24');
+			elem.setAttributeNS(null, 'x', x);
+			elem.setAttributeNS(null, 'y', y);
 
-			if (x == 0) {
+			if (config.sample && x == 0) {
 				elem.setAttributeNS(null, 'stroke', 'red');
 				elem.setAttributeNS(null, 'stroke-width', '.5');
 				elem.setAttributeNS(null, 'stroke-dasharray', 'none');
@@ -36,18 +37,21 @@ $(function() {
 
 		dest.empty();
 
-		$.each(source.split('\n'), function(y, text) {
-			for (let x = 0; x < text.length; ++x) {
-				const ch = text.charAt(x);
-				
-				if (/\d/.test(ch))
-					appendSymbol('digit.svg#d' + ch, x, y);
-				else if (symbols[ch])
-					appendSymbol('symbol.svg#' + symbols[ch], x, y);
+		$.each(source.split('\n'), function(j, text) {
+			let x = 0;
+			let y = j * 12;
+
+			for (let i = 0; i < text.length; ++i) {
+				const ch = text.charAt(i);
+				const spec = font[ch];
+				if (spec) {
+					appendSymbol(spec.href, x, y);
+					x += config.monospaced ? 12 : spec.width + 1;
+				}
+				else
+					x += config.monospaced ? 12 : 6;
 			}
 		});
-
-		storage.setItem('source', source);
 	};
 
 
@@ -59,56 +63,68 @@ $(function() {
 
 			dest.attr('transform', `scale(${val} ${val})`);
 			$('#bge').attr('patternTransform', `scale(${val} ${val})`);
-
-			storage.setItem('scale', val);
 		});
 
 	const thinkness = $('#thinkness').slider({ min: 0.1, max: 0.7, step: 0.01 })
 		.on('slidechange slide', function(event, ui) {
 			const val = ui.value || thinkness.slider('value');
-
 			dest.attr('stroke-width', val);
-
-			storage.setItem('thinkness', val);
 		});
 
 	const color = $('#color').slider({ min: 0, max: 1, step: 0.01 })
 		.on('slidechange slide', function(event, ui) {
 			const val = ui.value || color.slider('value');
-
 			dest.attr('stroke', `rgba(0,0,0,${val})`);
-
-			storage.setItem('color', val);
 		});
 
 	const style = $('#style')
 		.on('click change', function() {
-			const val = style.prop('checked');
-
-			if (val)
+			if (style.prop('checked'))
 				dest.each(function() { this.setAttributeNS(null, 'stroke-dasharray', '1 1.5'); });
 			else
 				dest.each(function() { this.removeAttributeNS(null, 'stroke-dasharray'); });
-
-			storage.setItem('style', val);
 		});
 
-	$('#source').on('keydown change', function() {
+	const border = $('#border')
+		.on('click change', function() {
+			$('#borderLine').toggle(border.prop('checked'));
+		});
+
+	$('#sample,#monospaced,#source').on('keydown change', function() {
 		setTimeout(update, 0);
 	});
 
-	$('.inject').each(function() {
-		const elem = $(this);
-		const name = elem.attr('id');
-		const value = storage.getItem(name) || init[name];
+	// --
 
-		if (elem.is('.ui-slider'))
-			elem.slider('value', value);
-		else if (elem.is(':checkbox'))
-			elem.prop('checked', value === 'true');
-		else
-			elem.val(value);
+	const storage = window.localStorage;
+	$('.inject')
+		.on('change slidechange', function() {
+			const elem = $(this);
+			const name = elem.attr('id');
 
-		elem.trigger('change');
-	});
+			const setValue = function(val) {
+				storage.setItem(name, config[name] = val);
+			};
+
+			if (elem.is('.ui-slider'))
+				setValue(elem.slider('value'));
+			else if (elem.is(':checkbox'))
+				setValue(elem.prop('checked'));
+			else
+				setValue(elem.val());
+		})
+		.each(function() {
+			const elem = $(this);
+			const name = elem.attr('id');
+			const value = storage.getItem(name) || config[name];
+
+			if (elem.is('.ui-slider'))
+				elem.slider('value', value);
+			else if (elem.is(':checkbox'))
+				elem.prop('checked', value === 'true');
+			else
+				elem.val(value);
+
+			elem.trigger('change');
+		});
 });
