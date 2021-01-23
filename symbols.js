@@ -12,6 +12,27 @@ export const digits = {
 	'9': { href: 'digit.svg#d9', width: 6 }
 };
 
+export const printed = {
+	'А': { href: 'printed.svg#CapA', width: 8 },
+	'а': { href: 'printed.svg#SmallA', width: 7 },
+	'Б': { href: 'printed.svg#CapB', width: 7 },
+	'б': { href: 'printed.svg#SmallB', width: 5 },
+	'В': { href: 'printed.svg#CapV', width: 8 },
+	'в': { href: 'printed.svg#SmallV', width: 5 },
+	'Г': { href: 'printed.svg#CapGh', width: 5 },
+	'г': { href: 'printed.svg#SmallGh', width: 3 },
+	'Ґ': { href: 'printed.svg#CapG', width: 6 },
+	'ґ': { href: 'printed.svg#SmallG', width: 4 },
+	'Д': { href: 'printed.svg#CapD', width: 8 },
+	'д': { href: 'printed.svg#SmallD', width: 6 },
+	'Е': { href: 'printed.svg#CapE', width: 8 },
+	'е': { href: 'printed.svg#SmallE', width: 4 },
+	'Є': { href: 'printed.svg#CapJe', width: 8 },
+	'є': { href: 'printed.svg#SmallJe', width: 5 },
+	'Ж': { href: 'printed.svg#CapZh', width: 10 },
+	'ж': { href: 'printed.svg#SmallZh', width: 6 },
+};
+
 export const special = {
 	'+': { href: 'special.svg#plus', width: 6 },
 	'-': { href: 'special.svg#minus', width: 6 },

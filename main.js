@@ -12,7 +12,7 @@ $(function() {
 
 	const dest = $('#dest');
 
-	const font = Object.assign({ }, symbols.digits, symbols.special);
+	const font = Object.assign({ }, symbols.digits, symbols.printed, symbols.special);
 
 	const update = function() {
 		const source = $('#source').val();
