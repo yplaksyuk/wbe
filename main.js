@@ -2,6 +2,7 @@ import * as symbols from './symbols.js';
 
 $(function() {
 	const config = {
+		background: 'bg-grid',
 		scale: 0.5,
 		thinkness: 0.2,
 		color: 1,
@@ -57,12 +58,18 @@ $(function() {
 
 	$('#panel').tabs();
 
+	const background = $('#background')
+		.on('change', function() {
+			const val = background.val();
+			$('#backgroundRect').attr('style', `fill: url(#${val})`);
+		});
+
 	const scale = $('#scale').slider({ min: 0.3, max: 1.0, step: 0.01 })
 		.on('slidechange slide', function(event, ui) {
 			const val = ui.value || scale.slider('value');
 
 			dest.attr('transform', `scale(${val} ${val})`);
-			$('#bge').attr('patternTransform', `scale(${val} ${val})`);
+			$('.backgroundPattern').attr('patternTransform', `scale(${val} ${val})`);
 		});
 
 	const thinkness = $('#thinkness').slider({ min: 0.1, max: 0.7, step: 0.01 })

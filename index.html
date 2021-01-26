@@ -34,12 +34,16 @@
 						<rect width="1" height="1" fill="url(#fadeGrad)" />
 					</mask>
 
-					<pattern id="bge" viewBox="0 0 12 12" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="scale(0.5 0.5)">
+					<pattern id="bg-grid" class="backgroundPattern" viewBox="0 0 12 12" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="scale(0.5 0.5)">
 						<polyline points="12,0 0,0 0,12" stroke="blue" stroke-width="0.4" fill="none" />
+					</pattern>
+
+					<pattern id="bg-line" class="backgroundPattern" viewBox="0 0 12 12" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="scale(0.5 0.5)">
+						<polyline points="12,0 0,0" stroke="blue" stroke-width="0.4" fill="none" />
 					</pattern>
 				</defs>
 
-				<rect x="0" y="0" width="100%" height="100%" style="fill: url(#bge)" />
+				<rect id="backgroundRect" x="0" y="0" width="100%" height="100%" style="fill: url(#bg-grid)" />
 				<line id="borderLine" x1="90%" y1="0" x2="90%" y2="100%" stroke="red" stroke-width="0.3" />
 
 				<g id="dest" transform="scale(0.5 0.5)" stroke-width="0.2" stroke="black"></g>
@@ -48,7 +52,13 @@
 	</div>
 
 	<div id="panel">
-		<label for="scale">Размер клетки</label>
+		<label for="background">Фон</label>
+		<select class="inject" id="background">
+			<option value="bg-grid">Клетка</option>
+			<option value="bg-line">Линия</option>
+		</select>
+
+		<label for="scale">Масштаб</label>
 		<div id="scale" class="inject"></div>
 
 		<label for="thinkness">Толщина линии</label>

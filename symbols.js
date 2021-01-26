@@ -31,6 +31,8 @@ export const printed = {
 	'є': { href: 'printed.svg#SmallJe', width: 5 },
 	'Ж': { href: 'printed.svg#CapZh', width: 10 },
 	'ж': { href: 'printed.svg#SmallZh', width: 6 },
+	'Т': { href: 'printed.svg#CapT', width: 8 },
+	'т': { href: 'printed.svg#SmallT', width: 6 },
 };
 
 export const special = {

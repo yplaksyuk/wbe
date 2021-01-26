@@ -70,5 +70,13 @@
 	<symbol id="SmallZh" width="6" height="24" viewBox="3 -12 6 24">
 		<path d="M 6 -7 L 6 0 M 3 -7 L 9 0 M 9 -7 L 3 0" fill="none" />
 	</symbol>
+
+	<symbol id="CapT" width="8" height="24" viewBox="2 -12 8 24">
+		<path d="M 6 -10.8 L 6 0 M 2 -10.8 L 10 -10.8" fill="none" />
+	</symbol>
+
+	<symbol id="SmallT" width="6" height="24" viewBox="3 -12 6 24">
+		<path d="M 6 -7 L 6 0 M 3 -7 L 9 -7" fill="none" />
+	</symbol>
 </svg>
 
