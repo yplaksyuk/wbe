@@ -18,39 +18,43 @@ $(function() {
 	const update = function() {
 		const source = $('#source').val();
 
-		const appendSymbol = function(href, x, y) {
-			const elem = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-			elem.setAttributeNS(null, 'href', href);
-			elem.setAttributeNS(null, 'width', '12');
-			elem.setAttributeNS(null, 'height', '24');
-			elem.setAttributeNS(null, 'x', x);
-			elem.setAttributeNS(null, 'y', y);
+		const appendSymbol = function(spec, pos) {
+			if (spec) {
+				const x = pos.x + (config.monospaced ? 0 : 0.5 + (spec.width - 12) / 2);
+				const y = pos.y;
 
-			if (config.sample && x == 0) {
-				elem.setAttributeNS(null, 'stroke', 'red');
-				elem.setAttributeNS(null, 'stroke-width', '.5');
-				elem.setAttributeNS(null, 'stroke-dasharray', 'none');
+				const elem = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+				elem.setAttributeNS(null, 'href', spec.href);
+				elem.setAttributeNS(null, 'width', '12');
+				elem.setAttributeNS(null, 'height', '24');
+				elem.setAttributeNS(null, 'x', x);
+				elem.setAttributeNS(null, 'y', y);
+
+				if (config.sample && pos.x == 0) {
+					elem.setAttributeNS(null, 'stroke', 'red');
+					elem.setAttributeNS(null, 'stroke-width', '.5');
+					elem.setAttributeNS(null, 'stroke-dasharray', 'none');
+				}
+
+				dest.append(elem);
+
+				pos.x += config.monospaced ? 12 : spec.width + 1.5;
 			}
-
-			dest.append(elem);
+			else
+				pos.x += config.monospaced ? 12 : 6;
 		};
 
 
 		dest.empty();
 
 		$.each(source.split('\n'), function(j, text) {
-			let x = 0;
-			let y = j * 12;
+			const pos = { x: 0, y: j * 12 };
 
 			for (let i = 0; i < text.length; ++i) {
 				const ch = text.charAt(i);
 				const spec = font[ch];
-				if (spec) {
-					appendSymbol(spec.href, x, y);
-					x += config.monospaced ? 12 : spec.width + 1;
-				}
-				else
-					x += config.monospaced ? 12 : 6;
+
+				appendSymbol(spec, pos);
 			}
 		});
 	};
