@@ -5,7 +5,7 @@ $(function() {
 		background: 'bg-grid',
 		scale: 0.5,
 		thinkness: 0.2,
-		color: 1,
+		color: 0,
 		sample: true,
 		monospaced: true,
 		source: '111\n222\n333'
@@ -28,7 +28,7 @@ $(function() {
 				elem.setAttributeNS(null, 'width', '12');
 				elem.setAttributeNS(null, 'height', '24');
 				elem.setAttributeNS(null, 'x', x);
-				elem.setAttributeNS(null, 'y', y);
+				elem.setAttributeNS(null, 'y', y - 0.15);
 
 				if (config.sample && pos.x == 0) {
 					elem.setAttributeNS(null, 'stroke', 'red');
@@ -80,18 +80,22 @@ $(function() {
 		.on('slidechange slide', function(event, ui) {
 			const val = ui.value || thinkness.slider('value');
 			dest.attr('stroke-width', val);
+
+			$('#style').trigger('update');
 		});
 
-	const color = $('#color').slider({ min: 0, max: 1, step: 0.01 })
+	const color = $('#color').slider({ min: 0, max: 255, step: 1 })
 		.on('slidechange slide', function(event, ui) {
-			const val = ui.value || color.slider('value');
-			dest.attr('stroke', `rgba(0,0,0,${val})`);
+			const val = 255 - (ui.value || color.slider('value'));
+			dest.attr('stroke', `rgb(${val}, ${val},${val})`);
 		});
 
 	const style = $('#style')
-		.on('click change', function() {
-			if (style.prop('checked'))
-				dest.each(function() { this.setAttributeNS(null, 'stroke-dasharray', '1 1.5'); });
+		.on('click change update', function() {
+			if (style.prop('checked')) {
+				const val = thinkness.slider('value') * 0.2;
+				dest.each(function() { this.setAttributeNS(null, 'stroke-dasharray', `${val},${val * 10}`); });
+			}
 			else
 				dest.each(function() { this.removeAttributeNS(null, 'stroke-dasharray'); });
 		});
