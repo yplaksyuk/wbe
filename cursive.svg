@@ -1,0 +1,266 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+	<symbol id="cA" width="8" height="24" viewBox="2 -12 8 24">
+		<path d="M -1.25 -0.68 C -1.15 0.12 -0.51 0.15 -0.01 -0.55 L 7 -9.01 L 7.67 -10.97 L 4.03 -0.09 C 4.1 -1.6 3.68 -2.72 2.92 -3.24 C 1.97 -3.78 0.59 -3.58 0.53 -2.82 C 0.45 -1.66 4.7 -2.2 6.6 -2.5" fill="none" />
+	</symbol>
+
+	<symbol id="sA" width="7" height="24" viewBox="3.5 -12 7 24">
+		<path d="M 4.38 -4.36 C 3.97 -5.16 1.86 -5.16 1.53 -4.55 L 0.17 -0.48 C 0.2 0.14 0.89 0.03 1.24 -0.36 L 3.82 -2.47 L 4.63 -4.94 L 3.15 -0.42 C 3.18 0.11 3.64 0.07 4.04 -0.38 L 6 -2.5" fill="none" />
+	</symbol>
+
+	<symbol id="cB" width="7" height="24" viewBox="3 -12 7 24">
+		<path d="M 3.46 -10.37 L 0.21 -0.64 C -0.23 0.39 -1.2 -0.2 -1.03 -0.67 L 1.68 -5.02 C 2.21 -6.35 5.36 -6.08 5.46 -5 L 3.98 -0.52 C 3.6 0.2 1.7 0.1 1.6 -0.8 M 1.69 -9.02 C 0.48 -9.95 0.97 -11.09 2 -11.01 L 7.32 -11" fill="none" />
+	</symbol>
+
+	<symbol id="sB" width="4" height="24" viewBox="4 -12 4 24">
+		<path d="M 4.25 -4.09 C 3.64 -5.35 1.78 -5.08 1.47 -4.38 L 0.3 -0.91 C 0.18 0.31 2.96 0.11 3.22 -0.65 L 6.54 -10.64 C 6.73 -11.16 7.55 -11.02 9.48 -11" fill="none" />
+	</symbol>
+
+	<symbol id="cV" width="8" height="24" viewBox="3 -12 8 24">
+		<path d="M 3.8 -10.95 L 0.16 -0.5 C -0.22 0.3 -1.77 -0.07 -1.11 -1.34 C 0.65 -4.48 2.47 -7.65 3.98 -10.39 C 4.81 -11.39 6.79 -10.96 6.71 -9.85 L 5.6 -6.69 C 5.4 -6.31 4.79 -6.32 4.12 -6.34 C 4.82 -6.05 5.51 -5.63 5.4 -5.25 L 3.95 -0.89 C 3.3 0.41 1.19 0.04 1.03 -1.15" fill="none" />
+	</symbol>
+
+	<symbol id="sV" width="5" height="24" viewBox="4 -12 5 24">
+		<path d="M -0.348 -2.846 C 1.147 -4.125 4.258 -6.708 4.503 -7.044 C 4.8 -7.858 4.955 -8.413 5.252 -9.343 C 5.407 -10.337 3.911 -10.325 3.252 -9.743 L 0.357 -1.052 C 0.435 0.201 2.72 0.114 3.173 -0.742 L 4.361 -4.293 C 4.064 -5.301 2.154 -5.295 1.56 -4.254" fill="none" />
+	</symbol>
+
+	<symbol id="cGh" width="5" height="24" viewBox="4 -12 5 24">
+		<path d="M 3.5 -10.46 L 0.24 -0.67 C -0.44 0.42 -1.74 -0.14 -1.57 -0.99 M 1.73 -8.58 C 0.04 -8.84 -0.12 -10.83 1.01 -11.03 L 7.64 -10.98" fill="none" />
+	</symbol>
+
+	<symbol id="sGh" width="3" height="24" viewBox="4 -12 3 24">
+		<path d="M 1.73 -3.3 L 3.47 -4.65 C 4.07 -5.17 4.5 -5.06 4.54 -4.57 L 3.21 -0.7 C 3.01 -0.02 3.63 0.13 4.03 -0.33 L 5.98 -2.49" fill="none" />
+	</symbol>
+
+	<symbol id="cG" width="6" height="24" viewBox="4 -12 6 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="sG" width="4" height="24" viewBox="4 -12 4 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="cD" width="8" height="24" viewBox="2 -12 8 24">
+		<path d="M 3.32 -10.03 L 0.35 -1.02 C -0.69 0.8 -2.06 -0.56 -1.99 -0.77 C -1.32 -1.23 -0.65 -1.48 0.28 -0.71 C 1.44 0.11 4.02 0.31 4.29 -0.85 L 6.64 -7.95 C 7.33 -11.99 1.36 -11.45 0.5 -8.97 C 0.04 -7.93 0.01 -6.45 0.39 -5.8 C 1.36 -4.05 4.77 -2.9 6.76 -2.46" fill="none" />
+	</symbol>
+
+	<symbol id="sD" width="6" height="24" viewBox="3 -12 6 24">
+		<path d="M 4.24 -3.92 C 3.97 -5.32 2.31 -5.22 1.53 -4.5 L 0.29 -0.81 C 0.53 0.33 1.37 -0.25 1.65 -0.53 L 3.93 -2.77 L 4.66 -4.97 L 1.61 4.09 C 0.92 5 -0.01 4.09 0.12 3.46 L 0.83 1.62 L 5.52 -2.5" fill="none" />
+	</symbol>
+
+	<symbol id="cE" width="6" height="24" viewBox="3 -12 6 24">
+		<path d="M 6.84 -8.51 L 7.35 -10.03 C 7.05 -11.15 4.23 -11.15 3.49 -10.43 L 2.19 -6.53 L 4.05 -6.02 L 1.75 -5.25 L 0.24 -0.72 C 0.24 0.17 1.37 0.07 1.82 -0.4 L 4.83 -2.5" fill="none" />
+	</symbol>
+
+	<symbol id="sE" width="4" height="24" viewBox="4 -12 4 24">
+		<path d="M 0.01 -1.5 L 3.7 -3.84 L 3.86 -4.35 C 3.89 -5.23 1.8 -5.14 1.5 -4.49 L 0.22 -0.67 C 0.19 0.01 0.69 0.11 1.27 -0.28 L 4.29 -2.5" fill="none" />
+	</symbol>
+
+	<symbol id="cJe" width="8" height="24" viewBox="2.2 -12 8 24">
+		<path d="M 6.904 -8.766 L 7.36 -10.06 C 7.2 -11.37 3.85 -10.94 3.49 -10.43 L 0.34 -1.07 C 0.24 -0.27 1.99 0.37 2.94 -0.51 L 5.2 -2.5 M 2.01 -6 L 4.49 -5.97" fill="none" />
+	</symbol>
+
+	<symbol id="sJe" width="5" height="24" viewBox="4 -12 5 24">
+		<path d="M 3.537 -4.059 C 3.79 -5.37 1.7 -5.17 1.56 -4.65 L 0.29 -0.85 C 0.17 -0.23 0.65 0.32 1.45 -0.33 L 3.5 -2.5 M 1 -2.99 L 2.45 -3" fill="none" />
+	</symbol>
+
+	<symbol id="cZh" width="10" height="24" viewBox="1 -12 10 24">
+		<path d="M -0.55 -7.61 L 2.32 -10.64 C 2.9 -11.27 3.55 -11 3.5 -10.45 L 0.27 -0.76 C -0.99 0.6 -2.38 -0.21 -2.5 -1.52 M 0.37 -1.04 L 5.67 -8.02 M 6.68 -11.05 L 3 0 M 3.33 -0.94 L 8.69 -8.02 L 9.35 -10.11 C 9.67 -11.08 11.96 -11.27 11.96 -9.98 L 11.11 -7.3 M 8.67 -7.98 L 6.31 -0.94 C 6.18 -0.19 6.91 0.31 7.62 -0.33 L 9.56 -2.5" fill="none" />
+	</symbol>
+
+	<symbol id="sZh" width="6" height="24" viewBox="3 -12 6 24">
+		<path d="M -0.09 -3.79 L 0.89 -4.82 C 1.04 -5.01 1.55 -5.09 1.57 -4.73 L 0.25 -0.72 C -0.25 0.33 -1.11 -0.01 -1.04 -0.78 M 0.27 -0.75 L 2.82 -3.96 L 3.17 -4.97 L 1.51 -0.01 L 1.74 -0.71 L 4.32 -3.95 L 4.54 -4.6 C 4.78 -5.01 5.77 -5.2 5.83 -4.42 L 5.66 -3.84 M 4.32 -3.92 L 3.21 -0.61 C 3.06 0.26 3.93 -0.02 4.19 -0.48 L 5.52 -2.5" fill="none" />
+	</symbol>
+
+	<symbol id="cZ" width="8" height="24" viewBox="2 -12 8 24">
+		<path d="M 4.01 -8.73 L 4.66 -10.34 C 5.04 -11.19 8.24 -11.25 8.37 -10.14 L 7.15 -6.43 C 7.02 -6.06 6.04 -6.1 5.36 -6.02 C 5.95 -5.75 6.92 -5.65 6.74 -5.24 L 5.32 -0.98 C 5.08 -0.23 4.72 0.01 2.99 -0.01 C 1.18 0 0.98 -0.8 0.97 -1.21" fill="none" />
+	</symbol>
+
+	<symbol id="sZ" width="4.2" height="24" viewBox="4 -12 4.3 24">
+		<path d="M 0.99 -3 L 1.42 -4.25 C 1.81 -5.32 4.53 -5.07 4.43 -4.34 L 3.45 -1.33 C 3.29 -0.93 2.78 -0.85 1.83 -0.75 C 2.63 -0.52 3.05 -0.45 3 0 L 1.16 5.47 C 0.48 6.34 -0.45 5.79 -0.31 4.94 L 0.75 2 L 5.61 -2.5" fill="none" />
+	</symbol>
+
+	<symbol id="cY" width="6" height="24" viewBox="3 -12 6 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="sY" width="4" height="24" viewBox="4 -12 4 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="cI" width="2" height="24" viewBox="5 -12 2 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="sI" width="2" height="24" viewBox="5 -12 2 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="cJi" width="2" height="24" viewBox="5 -12 2 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="sJi" width="2" height="24" viewBox="5 -12 2 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="cJ" width="6" height="24" viewBox="3 -12 6 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="sJ" width="4" height="24" viewBox="4 -12 4 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="cK" width="6" height="24" viewBox="3 -12 6 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="sK" width="4" height="24" viewBox="4 -12 4 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="cL" width="8" height="24" viewBox="2 -12 8 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="sL" width="4" height="24" viewBox="4 -12 4 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="cM" width="8" height="24" viewBox="2 -12 8 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="sM" width="6" height="24" viewBox="3 -12 6 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="cN" width="6" height="24" viewBox="3 -12 6 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="sN" width="4" height="24" viewBox="4 -12 4 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="cO" width="8" height="24" viewBox="2 -12 8 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="sO" width="4" height="24" viewBox="4 -12 4 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="cP" width="6" height="24" viewBox="3 -12 6 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="sP" width="4" height="24" viewBox="4 -12 4 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="cR" width="6" height="24" viewBox="3 -12 6 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="sR" width="4" height="24" viewBox="3 -12 4 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="cS" width="8" height="24" viewBox="2 -12 8 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="sS" width="6" height="24" viewBox="3 -12 6 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="cT" width="8" height="24" viewBox="2 -12 8 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="sT" width="6" height="24" viewBox="3 -12 6 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="cU" width="7" height="24" viewBox="3 -12 7 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="sU" width="6" height="24" viewBox="3 -12 6 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="cF" width="10" height="24" viewBox="1 -12 10 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="sF" width="6" height="24" viewBox="3 -12 6 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="cH" width="8" height="24" viewBox="2 -12 8 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="sH" width="6" height="24" viewBox="3 -12 6 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="cC" width="7" height="24" viewBox="3 -12 7 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="sC" width="5" height="24" viewBox="4 -12 5 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="cCh" width="6" height="24" viewBox="3 -12 6 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="sCh" width="4" height="24" viewBox="4 -12 4 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="cSh" width="10" height="24" viewBox="1 -12 10 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="sSh" width="6" height="24" viewBox="3 -12 6 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="cSch" width="11" height="24" viewBox="1 -12 11 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="sSch" width="7" height="24" viewBox="3 -12 7 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="cX" width="6" height="24" viewBox="3 -12 6 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="sX" width="4" height="24" viewBox="3 -12 4 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="cJu" width="8" height="24" viewBox="2 -12 8 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="sJu" width="6" height="24" viewBox="3 -12 6 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="cJa" width="6" height="24" viewBox="3 -12 6 24">
+		<path d="" fill="none" />
+	</symbol>
+
+	<symbol id="sJa" width="4" height="24" viewBox="4 -12 4 24">
+		<path d="" fill="none" />
+	</symbol>
+</svg>
+

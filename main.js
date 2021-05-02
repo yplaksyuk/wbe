@@ -7,6 +7,7 @@ $(function() {
 		thinkness: 0.2,
 		color: 0,
 		sample: true,
+		cursive: false,
 		monospaced: true,
 		source: '111\n222\n333'
 	}
@@ -25,7 +26,7 @@ $(function() {
 
 				const elem = document.createElementNS('http://www.w3.org/2000/svg', 'use');
 				elem.setAttributeNS(null, 'href', spec.href);
-				elem.setAttributeNS(null, 'width', '12');
+				elem.setAttributeNS(null, 'width', '24');
 				elem.setAttributeNS(null, 'height', '24');
 				elem.setAttributeNS(null, 'x', x);
 				elem.setAttributeNS(null, 'y', y - 0.15);
@@ -98,6 +99,12 @@ $(function() {
 			}
 			else
 				dest.each(function() { this.removeAttributeNS(null, 'stroke-dasharray'); });
+		});
+
+	const cursive = $('#cursive')
+		.on('click change', function() {
+			Object.assign(font,  cursive.prop('checked') ? symbols.cursive : symbols.printed );
+			setTimeout(update, 0);
 		});
 
 	const border = $('#border')
