@@ -29,7 +29,7 @@ $(function() {
 				elem.setAttributeNS(null, 'width', '24');
 				elem.setAttributeNS(null, 'height', '24');
 				elem.setAttributeNS(null, 'x', x);
-				elem.setAttributeNS(null, 'y', y - 0.15);
+				elem.setAttributeNS(null, 'y', y);
 
 				if (config.sample && pos.x == 0) {
 					elem.setAttributeNS(null, 'stroke', 'red');
