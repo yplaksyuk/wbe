@@ -39,7 +39,7 @@ $(function() {
 
 				dest.append(elem);
 
-				/*const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+				const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
 				rect.setAttributeNS(null, 'width',spec.width);
 				rect.setAttributeNS(null, 'height', 11);
 				rect.setAttributeNS(null, 'x', x);
@@ -47,7 +47,7 @@ $(function() {
 				rect.setAttributeNS(null, 'stroke', 'green');
 				rect.setAttributeNS(null, 'stroke-width', .1);
 				rect.setAttributeNS(null, 'fill-opacity', 0);
-				dest.append(rect);*/
+				dest.append(rect);
 
 				pos.x += config.monospaced ? 12 : spec.width - (spec.kern || 0);
 			}
@@ -62,9 +62,10 @@ $(function() {
 			const pos = { x: 0, y: j * 12 };
 
 			for (let i = 0; i < text.length; ++i) {
-				const ch = text.charAt(i);
-				const spec = font[ch];
+				const ch0 = text.charAt(i);
+				const ch1 = text.charAt(i + 1);
 
+				const spec = font[ch0] && (ch1 === ' ' || ch1 === '' ? font[ch0].b : font[ch0].c || font[ch0].b);
 				appendSymbol(spec, pos);
 			}
 		});
