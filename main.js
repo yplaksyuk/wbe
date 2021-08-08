@@ -22,7 +22,7 @@ $(function() {
 		const appendSymbol = function(spec, pos) {
 			if (spec) {
 				const x = pos.x + (config.monospaced ? (12 - spec.width) / 2 : - (spec.kern || 0));
-				const y = pos.y;
+				const y = pos.y + 0.25;
 
 				const elem = document.createElementNS('http://www.w3.org/2000/svg', 'use');
 				elem.setAttributeNS(null, 'href', spec.href);
@@ -39,15 +39,17 @@ $(function() {
 
 				dest.append(elem);
 
-				const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-				rect.setAttributeNS(null, 'width',spec.width);
-				rect.setAttributeNS(null, 'height', 11);
-				rect.setAttributeNS(null, 'x', x);
-				rect.setAttributeNS(null, 'y', y);
-				rect.setAttributeNS(null, 'stroke', 'green');
-				rect.setAttributeNS(null, 'stroke-width', .1);
-				rect.setAttributeNS(null, 'fill-opacity', 0);
-				dest.append(rect);
+				if (0) {
+					const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+					rect.setAttributeNS(null, 'width',spec.width);
+					rect.setAttributeNS(null, 'height', 11);
+					rect.setAttributeNS(null, 'x', x);
+					rect.setAttributeNS(null, 'y', y);
+					rect.setAttributeNS(null, 'stroke', 'green');
+					rect.setAttributeNS(null, 'stroke-width', .1);
+					rect.setAttributeNS(null, 'fill-opacity', 0);
+					dest.append(rect);
+				}
 
 				pos.x += config.monospaced ? 12 : spec.width - (spec.kern || 0);
 			}
