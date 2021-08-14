@@ -19,6 +19,22 @@ $(function() {
 	const update = function() {
 		const source = $('#source').val();
 
+		let j0 = 0;
+		if ($('#sample').prop('checked')) {
+			const ch = source.trim().charAt(0).toUpperCase();
+			const src = symbols.samples[ch];
+
+			if (src) {
+				$('#sampleDrawing').attr('href', src);
+				$('#sampleDrawing').show();
+				j0 = 3;
+			}
+			else
+				$('#sampleDrawing').hide();
+		}
+		else
+			$('#sampleDrawing').hide();
+
 		const appendSymbol = function(spec, pos) {
 			if (spec) {
 				const x = pos.x + (config.monospaced ? (12 - spec.width) / 2 : - (spec.kern || 0));
@@ -61,7 +77,7 @@ $(function() {
 		dest.empty();
 
 		$.each(source.split('\n'), function(j, text) {
-			const pos = { x: 0, y: j * 12 };
+			const pos = { x: 0, y: (j0 + j) * 12 };
 
 			for (let i = 0; i < text.length; ++i) {
 				const ch0 = text.charAt(i);

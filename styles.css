@@ -39,6 +39,10 @@ html, body {
 	width: 100%;
 }
 
+#sampleDrawing img {
+	height: 120pt;
+}
+
 .about {
 	position: absolute;
 	padding: 4px 0;
