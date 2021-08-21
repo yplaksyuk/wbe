@@ -35,6 +35,10 @@ html, body {
 	overflow: hidden;
 }
 
+#panel input[type=range] {
+	width: 100%;
+}
+
 #source {
 	width: 100%;
 	resize: none;

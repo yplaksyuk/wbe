@@ -61,24 +61,25 @@
 		</select>
 
 		<label for="scale">Масштаб</label>
-		<div id="scale" class="inject"></div>
+		<div><input type="range" class="inject" min="0.3" max="1.0" step="0.01" id="scale" value="0.5" /></div>
 
 		<label for="thinkness">Толщина линии</label>
-		<div id="thinkness" class="inject"></div>
+		<div><input type="range" class="inject" min="0.1" max="0.7" step="0.01" id="thinkness" value="0.5" /></div>
 
 		<label for="color">Насыщенность</label>
-		<div id="color" class="inject"></div>
+		<div><input type="range" class="inject" min="0" max="255" step="1" id="color" value="255" /></div>
 
 		<label for="style">Дополнительно</label>
 		<div><input type="checkbox" class="inject" id="sample" /> пример начертания</div>
+		<div><input type="checkbox" class="inject" id="fragment" /> пример фрагмента: <input type="number" class="inject" size="1" min="1" max="9" step="1" id="repeat" value="1" /></div>
 		<div><input type="checkbox" class="inject" id="cap" /> буквица</div>
 		<div><input type="checkbox" class="inject" id="cursive" /> курсив</div>
-		<div><input type="checkbox" class="inject" id="style" /> пунктир</div>
+		<div><input type="checkbox" class="inject" id="dashed" /> пунктир</div>
 		<div><input type="checkbox" class="inject" id="monospaced" /> равномерно</div>
-		<div><input type="checkbox" class="inject" id="border" /> поля</div>
+		<div><input type="checkbox" class="inject" id="border" checked /> поля</div>
 
 		<label for="source">Шаблон</label>
-		<textarea id="source" class="inject" cols="30" rows="25" style="font-family: monospace;"></textarea>
+		<textarea id="source" class="inject" cols="30" rows="25" style="font-family: monospace;">0123456789</textarea>
 
 		<div class="about">Проект на <a href="https://github.com/yplaksyuk/wbe">GitHub.com</a></div>
 	</div>

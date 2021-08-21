@@ -1,4 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg">
+	<symbol id="space" viewBox="0 -12 6 24">
+	</symbol>
+
 	<symbol id="plus" viewBox="11.5 -12 6 24">
 		<path d="M 6 -9 L 6 -3 M 3 -6 L 9 -6" />
 	</symbol>

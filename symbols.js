@@ -196,6 +196,7 @@ export const samples = {
 };
 
 export const special = {
+	' ': { b: { href: 'special.svg#space', width: 6 } },
 	'+': { b: { href: 'special.svg#plus', width: 7 } },
 	'-': { b: { href: 'special.svg#minus', width: 7 } },
 	'=': { b: { href: 'special.svg#equal', width: 7 } },

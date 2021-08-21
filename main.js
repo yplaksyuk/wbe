@@ -1,17 +1,7 @@
 import * as symbols from './symbols.js';
 
 $(function() {
-	const config = {
-		background: 'bg-grid',
-		scale: 0.5,
-		thinkness: 0.2,
-		color: 0,
-		sample: false,
-		cap: true,
-		cursive: false,
-		monospaced: true,
-		source: '111\n222\n333'
-	}
+	const config = { };
 
 	const dest = $('#dest');
 
@@ -19,8 +9,15 @@ $(function() {
 
 	const update = function() {
 		const source = $('#source').val();
+		const thinkness = $('#thinkness').val();
+		const is_monospaced = $('#monospaced').prop('checked');
+		const is_fragment = $('#fragment').prop('checked');
+		const repeat = + $('#repeat').val();
 
-		let j0 = 0;
+		const default_style = $('#dashed').prop('checked') ? 'dashed' : 'normal';
+
+		let j = 0;
+
 		if ($('#sample').prop('checked')) {
 			const ch = source.trim().charAt(0).toUpperCase();
 			const src = symbols.samples[ch];
@@ -28,7 +25,7 @@ $(function() {
 			if (src) {
 				$('#sampleDrawing').attr('href', src);
 				$('#sampleDrawing').show();
-				j0 = 3;
+				j = 3;
 			}
 			else
 				$('#sampleDrawing').hide();
@@ -36,7 +33,7 @@ $(function() {
 		else
 			$('#sampleDrawing').hide();
 
-		const appendSymbol = function(spec, pos) {
+		const appendSymbol = function(spec, pos, style) {
 			if (spec) {
 				const x = pos.x + (config.monospaced ? (12 - spec.width) / 2 : - (spec.kern || 0));
 				const y = pos.y + 0.25;
@@ -48,10 +45,13 @@ $(function() {
 				elem.setAttributeNS(null, 'x', x);
 				elem.setAttributeNS(null, 'y', y);
 
-				if (config.cap && pos.x == 0) {
+				switch (style) {
+				case 'red':
 					elem.setAttributeNS(null, 'stroke', 'red');
 					elem.setAttributeNS(null, 'stroke-width', '.5');
-					elem.setAttributeNS(null, 'stroke-dasharray', 'none');
+					break;
+				case 'dashed':
+					elem.setAttributeNS(null, 'stroke-dasharray', `${thinkness},${thinkness * 3}`);
 				}
 
 				dest.append(elem);
@@ -70,24 +70,55 @@ $(function() {
 
 				pos.x += config.monospaced ? 12 : spec.width - (spec.kern || 0);
 			}
-			else
-				pos.x += config.monospaced ? 12 : 6;
+		};
+
+		let fragment = [];
+		let fragment_open = false;
+
+		const appendLine = function(text, recursive) {
+			const pos = { x: 0, y: j++ * 12 };
+
+			let fragment_appended = false;
+
+			const append_fragment = function(){
+				if (fragment_open && !recursive) {
+					fragment_appended || fragment.push(text);
+					fragment_appended = true;
+				}
+			};
+
+			append_fragment();
+
+			for (let i = 0; i < text.length; ++i) {
+				const ch0 = text.charAt(i);
+				if (ch0 == '[' || ch0 == ']') {
+					if (is_fragment) {
+						fragment_open = ch0 == '[';
+						append_fragment();
+					}
+
+				}
+				else {
+					const ch1 = text.charAt(i + 1);
+					const style = config.cap && i == 0 ? 'red' : default_style;
+
+					const spec = font[ch0] && (is_monospaced || ch1 === ' ' || ch1 === '' ? font[ch0].b : font[ch0].c || font[ch0].b);
+					appendSymbol(spec, pos, fragment_open ? (recursive ? 'dashed' : 'red') : style);
+				}
+			}
+
+			if (!fragment_open && fragment.length > 0) {
+				const arr = fragment; fragment = [];
+
+				for (let n = 0; n < repeat; ++n)
+					$.each(arr, function(k, text) { appendLine(text, true); });
+			}
 		};
 
 
 		dest.empty();
 
-		$.each(source.split('\n'), function(j, text) {
-			const pos = { x: 0, y: (j0 + j) * 12 };
-
-			for (let i = 0; i < text.length; ++i) {
-				const ch0 = text.charAt(i);
-				const ch1 = text.charAt(i + 1);
-
-				const spec = font[ch0] && (ch1 === ' ' || ch1 === '' ? font[ch0].b : font[ch0].c || font[ch0].b);
-				appendSymbol(spec, pos);
-			}
-		});
+		$.each(source.split('\n'), function(k, text) { appendLine(text); });
 	};
 
 
@@ -99,42 +130,26 @@ $(function() {
 			$('#backgroundRect').attr('style', `fill: url(#${val})`);
 		});
 
-	const scale = $('#scale').slider({ min: 0.3, max: 1.0, step: 0.01 })
-		.on('slidechange slide', function(event, ui) {
-			const val = ui.value || scale.slider('value');
+	const scale = $('#scale').on('change input', function() {
+		const val = $(this).val();
 
-			dest.attr('transform', `scale(${val} ${val})`);
-			$('.backgroundPattern').attr('patternTransform', `scale(${val} ${val})`);
-		});
+		dest.attr('transform', `scale(${val} ${val})`);
+		$('.backgroundPattern').attr('patternTransform', `scale(${val} ${val})`);
+	});
 
-	const thinkness = $('#thinkness').slider({ min: 0.1, max: 0.7, step: 0.01 })
-		.on('slidechange slide', function(event, ui) {
-			const val = ui.value || thinkness.slider('value');
-			dest.attr('stroke-width', val);
+	const thinkness = $('#thinkness').on('change input', function() {
+		const val = $(this).val();
+		dest.attr('stroke-width', val);
+	});
 
-			$('#style').trigger('update');
-		});
-
-	const color = $('#color').slider({ min: 0, max: 255, step: 1 })
-		.on('slidechange slide', function(event, ui) {
-			const val = 255 - (ui.value || color.slider('value'));
-			dest.attr('stroke', `rgb(${val}, ${val},${val})`);
-		});
-
-	const style = $('#style')
-		.on('click change update', function() {
-			if (style.prop('checked')) {
-				const val = thinkness.slider('value') * 0.2;
-				dest.each(function() { this.setAttributeNS(null, 'stroke-dasharray', `${val},${val * 10}`); });
-			}
-			else
-				dest.each(function() { this.removeAttributeNS(null, 'stroke-dasharray'); });
-		});
+	const color = $('#color').on('change input', function() {
+		const val = 255 - $(this).val();
+		dest.attr('stroke', `rgb(${val}, ${val},${val})`);
+	});
 
 	const cursive = $('#cursive')
 		.on('click change', function() {
 			Object.assign(font,  cursive.prop('checked') ? symbols.cursive : symbols.printed );
-			setTimeout(update, 0);
 		});
 
 	const border = $('#border')
@@ -142,15 +157,13 @@ $(function() {
 			$('#borderLine').toggle(border.prop('checked'));
 		});
 
-	$('#sample,#cap,#monospaced,#source').on('keydown change', function() {
-		setTimeout(update, 0);
-	});
-
 	// --
 
 	const storage = window.localStorage;
 	$('.inject')
-		.on('change slidechange', function() {
+		.on('change input', function() {
+			setTimeout(update, 0);
+
 			const elem = $(this);
 			const name = elem.attr('id');
 
@@ -158,9 +171,7 @@ $(function() {
 				storage.setItem(name, config[name] = val);
 			};
 
-			if (elem.is('.ui-slider'))
-				setValue(elem.slider('value'));
-			else if (elem.is(':checkbox'))
+			if (elem.is(':checkbox'))
 				setValue(elem.prop('checked'));
 			else
 				setValue(elem.val());
@@ -168,15 +179,15 @@ $(function() {
 		.each(function() {
 			const elem = $(this);
 			const name = elem.attr('id');
-			const value = storage.getItem(name) || config[name];
 
-			if (elem.is('.ui-slider'))
-				elem.slider('value', value);
-			else if (elem.is(':checkbox'))
-				elem.prop('checked', value === 'true');
-			else
-				elem.val(value);
+			const value = storage.getItem(name);
+			if (value != null) {
+				if (elem.is(':checkbox'))
+					elem.prop('checked', value === 'true');
+				else
+					elem.val(value);
 
-			elem.trigger('change');
+				elem.trigger('change');
+			}
 		});
 });
