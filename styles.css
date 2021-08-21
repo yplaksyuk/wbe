@@ -37,6 +37,7 @@ html, body {
 
 #source {
 	width: 100%;
+	resize: none;
 }
 
 #sampleDrawing img {

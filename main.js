@@ -6,7 +6,8 @@ $(function() {
 		scale: 0.5,
 		thinkness: 0.2,
 		color: 0,
-		sample: true,
+		sample: false,
+		cap: true,
 		cursive: false,
 		monospaced: true,
 		source: '111\n222\n333'
@@ -47,7 +48,7 @@ $(function() {
 				elem.setAttributeNS(null, 'x', x);
 				elem.setAttributeNS(null, 'y', y);
 
-				if (config.sample && pos.x == 0) {
+				if (config.cap && pos.x == 0) {
 					elem.setAttributeNS(null, 'stroke', 'red');
 					elem.setAttributeNS(null, 'stroke-width', '.5');
 					elem.setAttributeNS(null, 'stroke-dasharray', 'none');
@@ -141,7 +142,7 @@ $(function() {
 			$('#borderLine').toggle(border.prop('checked'));
 		});
 
-	$('#sample,#monospaced,#source').on('keydown change', function() {
+	$('#sample,#cap,#monospaced,#source').on('keydown change', function() {
 		setTimeout(update, 0);
 	});
 

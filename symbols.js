@@ -198,5 +198,11 @@ export const samples = {
 export const special = {
 	'+': { b: { href: 'special.svg#plus', width: 7 } },
 	'-': { b: { href: 'special.svg#minus', width: 7 } },
-	'=': { b: { href: 'special.svg#equal', width: 7 } }
+	'=': { b: { href: 'special.svg#equal', width: 7 } },
+	'.': { b: { href: 'special.svg#dot', width: 4 } },
+	',': { b: { href: 'special.svg#comma', width: 4 } },
+	'!': { b: { href: 'special.svg#exclamation', width: 6 } },
+	'?': { b: { href: 'special.svg#question', width: 8 } },
+	':': { b: { href: 'special.svg#colon', width: 4 } },
+	';': { b: { href: 'special.svg#semicolon', width: 4 } },
 };
