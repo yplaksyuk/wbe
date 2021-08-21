@@ -107,11 +107,12 @@ $(function() {
 				}
 			}
 
-			if (!fragment_open && fragment.length > 0) {
-				const arr = fragment; fragment = [];
-
+			if (!fragment_open && !recursive && fragment.length > 0) {
 				for (let n = 0; n < repeat; ++n)
-					$.each(arr, function(k, text) { appendLine(text, true); });
+					$.each(fragment, function(k, text) { appendLine(text, true); });
+
+				fragment = [];
+
 			}
 		};
 
