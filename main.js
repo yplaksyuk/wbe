@@ -76,7 +76,7 @@ $(function() {
 		let fragment_open = false;
 
 		const appendLine = function(text, recursive) {
-			const pos = { x: 0, y: j++ * 12 };
+			const pos = { x: 2, y: j++ * 12 };
 
 			let fragment_appended = false;
 
