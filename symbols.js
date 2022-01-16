@@ -25,7 +25,7 @@ export const printed = {
 	'ґ': { b: { href: 'printed.svg#sG', width: 4 } },
 	'Д': { b: { href: 'printed.svg#cD', width: 9 } },
 	'д': { b: { href: 'printed.svg#sD', width: 6 } },
-	'Е': { b: { href: 'printed.svg#cE', width: 6 } },
+	'Е': { b: { href: 'printed.svg#cE', width: 8 } },
 	'е': { b: { href: 'printed.svg#sE', width: 4 } },
 	'Є': { b: { href: 'printed.svg#cJe', width: 8 } },
 	'є': { b: { href: 'printed.svg#sJe', width: 5 } },
