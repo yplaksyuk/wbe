@@ -127,7 +127,7 @@ $(function() {
 
 	const background = $('#background')
 		.on('change', function() {
-			const val = background.val();
+			const val = background.val() + ($('#bands').prop('checked') ? '-bands' : '');
 			$('#backgroundRect').attr('style', `fill: url(#${val})`);
 		});
 
@@ -151,6 +151,11 @@ $(function() {
 	const cursive = $('#cursive')
 		.on('click change', function() {
 			Object.assign(font,  cursive.prop('checked') ? symbols.cursive : symbols.printed );
+		});
+
+	const bands = $('#bands')
+		.on('click change', function() {
+			background.trigger('change');
 		});
 
 	const border = $('#border')

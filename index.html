@@ -28,11 +28,35 @@
 						<polyline points="12,0.5 0,0.5 0,12" stroke="blue" stroke-width="0.1" fill="none" />
 					</pattern>
 
+					<pattern id="bg-grid-bands" class="backgroundPattern" viewBox="0 0 12 12" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="scale(0.5 0.5)">
+						<rect x="0" y="7" width="12" height="5" fill="#ffb" class="guide-band" />
+						<polyline points="12,0.5 0,0.5 0,12" stroke="blue" stroke-width="0.1" fill="none" />
+					</pattern>
+
 					<pattern id="bg-line" class="backgroundPattern" viewBox="0 0 12 12" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="scale(0.5 0.5)">
 						<line  x1="12" y1="0.5" x2="0" y2="0.5" stroke="blue" stroke-width="0.1" />
 					</pattern>
 
+					<pattern id="bg-line-bands" class="backgroundPattern" viewBox="0 0 12 12" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="scale(0.5 0.5)">
+						<rect x="0" y="7" width="12" height="5" fill="#ffb" class="guide-band" />
+						<line  x1="12" y1="0.5" x2="0" y2="0.5" stroke="blue" stroke-width="0.1" />
+					</pattern>
+
 					<pattern id="bg-cursive" class="backgroundPattern" viewBox="0 0 12 36" width="12" height="36" patternUnits="userSpaceOnUse" patternTransform="scale(0.5 0.5)">
+						<line  x1="12" y1="0.5" x2="0" y2="0.5" stroke="blue" stroke-width="0.1" />
+						<line  x1="12" y1="7" x2="0" y2="7" stroke="blue" stroke-width="0.1" />
+						<line  x1="12" y1="12.5" x2="0" y2="12.5" stroke="blue" stroke-width="0.1" />
+						<line  x1="12" y1="19" x2="0" y2="19" stroke="blue" stroke-width="0.1" />
+						<line  x1="12" y1="24.5" x2="0" y2="24.5" stroke="blue" stroke-width="0.1" />
+						<line  x1="12" y1="31" x2="0" y2="31" stroke="blue" stroke-width="0.1" />
+						<line  x1="12" y1="0" x2="0" y2="36" stroke="blue" stroke-width="0.1" />
+					</pattern>
+
+					<pattern id="bg-cursive-bands" class="backgroundPattern" viewBox="0 0 12 36" width="12" height="36" patternUnits="userSpaceOnUse" patternTransform="scale(0.5 0.5)">
+						<rect x="0" y="7" width="12" height="5" fill="#ffb" class="guide-band" />
+						<rect x="0" y="19" width="12" height="5" fill="#ffb" class="guide-band" />
+						<rect x="0" y="31" width="12" height="5" fill="#ffb" class="guide-band" />
+
 						<line  x1="12" y1="0.5" x2="0" y2="0.5" stroke="blue" stroke-width="0.1" />
 						<line  x1="12" y1="7" x2="0" y2="7" stroke="blue" stroke-width="0.1" />
 						<line  x1="12" y1="12.5" x2="0" y2="12.5" stroke="blue" stroke-width="0.1" />
@@ -76,6 +100,7 @@
 		<div><input type="checkbox" class="inject" id="cursive" /> курсив</div>
 		<div><input type="checkbox" class="inject" id="dashed" /> пунктир</div>
 		<div><input type="checkbox" class="inject" id="monospaced" /> равномерно</div>
+		<div><input type="checkbox" class="inject" id="bands" /> направляющие полоски</div>
 		<div><input type="checkbox" class="inject" id="border" checked /> поля</div>
 
 		<label for="source">Шаблон</label>
